@@ -47,6 +47,8 @@ public class Import {
             {
                 if (type[type.length -1].equals("UPPER_ROW")) return null;
                 if (type[type.length -1].equals("UPPER_DIAG_ROW")) return null;
+                if (type[type.length -1].equals("LOWER_DIAG_ROW")) return null;
+
             }
         }
 
