@@ -27,20 +27,20 @@ public class Import {
         String[] lines = read(dataPath).split("\n");
         int count = 0;
         int numOfCities=0;
-        while(true)
+        for(int i =0; i < lines.length; i++)
         {
-            String[] words = lines[count].split(" ");
+            String[] words = lines[i].split(" ");
             if(words[0].equals("DIMENSION:"))
             {
                 numOfCities = Integer.parseInt(words[words.length-1]);
                 break;
             }
         }
-        count = 0;
+
         for(int i =0; i < lines.length; i++)
         {
 
-            String[] type = lines[count].split(" ");
+            String[] type = lines[i].split(" ");
             if(type[0].equals("EDGE_WEIGHT_FORMAT:"))
             {
                 if (type[type.length -1].equals("UPPER_ROW")) return null;
