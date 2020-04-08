@@ -32,7 +32,7 @@ public class Import {
             String[] words = lines[i].split(" ");
             String word = words[0];
             String word0 = word.split(":")[0];
-            if(word0.equals("DIMENSION:"))
+            if(word0.equals("DIMENSION"))
             {
                 numOfCities = Integer.parseInt(words[words.length-1]);
                 break;
@@ -48,6 +48,7 @@ public class Import {
                 if (type[type.length -1].equals("UPPER_ROW")) return null;
                 if (type[type.length -1].equals("UPPER_DIAG_ROW")) return null;
                 if (type[type.length -1].equals("LOWER_DIAG_ROW")) return null;
+                if (type[type.length -1].equals("FULL_MATRIX")) return null;
 
             }
         }

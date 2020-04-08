@@ -39,7 +39,7 @@ public class Main {
                     AveragingTool avg = new AveragingTool(geneticAlgorithm, 30);
                     results = avg.run();
                 }
-                FileInteract.appendToFile(results, outputType.toString() + "/gatsp.csv", listOfFiles[i].getName());
+                FileInteract.appendToFile(results, outputType.toString() + "/gatsp1.csv", listOfFiles[i].getName());
             }
             //            FileInteract.appendToFile(results, "src/output/gatsp.csv", listOfFiles[i].getName());
         }
