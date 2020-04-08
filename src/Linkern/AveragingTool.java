@@ -1,6 +1,5 @@
-package GA.Utility;
+package Linkern;
 
-import GA.Display.WindowGraph;
 import GA.GeneticAlgorithms.GeneticAlgorithm;
 
 import java.util.ArrayList;
@@ -10,34 +9,29 @@ import java.util.ArrayList;
  */
 public class AveragingTool {
 
-    private GeneticAlgorithm geneticAlgorithm;
+    private LinKernighan lk;
     private int numOfTimesToRun;
     private ArrayList<ArrayList<Double>> allValues;
     private ArrayList<String> legend = new ArrayList<>();
 
-    public AveragingTool (GeneticAlgorithm geneticAlgorithm, int numOfTimesToRun) {
-        this.geneticAlgorithm = geneticAlgorithm;
+    public AveragingTool(LinKernighan lk, int numOfTimesToRun) {
+        this.lk = lk;
         this.numOfTimesToRun = numOfTimesToRun;
         allValues = new ArrayList<>();
         legend = new ArrayList<>();
     }
 
     public double[] run () {
-
-//        ArrayList<Double> valuesForAverage = new ArrayList<>(); // Average dist. of each gen.
-//        ArrayList<Double> valuesForBest = new ArrayList<>();    // Best dist. of each gen.
-
         ArrayList<Double> bestValuesAllGen = new ArrayList<>();
         ArrayList<Long> runningTime = new ArrayList<>();
+
         for (int i = 0; i < numOfTimesToRun; i++) {
-            geneticAlgorithm.reset();
             long start = System.currentTimeMillis();
-            geneticAlgorithm.run();
-            long time = System.currentTimeMillis() - start;
-            runningTime.add(time);
-            bestValuesAllGen.add(geneticAlgorithm.getBestDistanceOfLastGeneration());
-
-
+            lk = new LinKernighan(lk.getCoordinates(), lk.getIds());
+            lk.runAlgorithm();
+            long runTime = System.currentTimeMillis() - start;
+            bestValuesAllGen.add(lk.getDistance());
+            runningTime.add(runTime);
 
         }
 
@@ -119,5 +113,6 @@ public class AveragingTool {
         }
         return sum/size;
     }
+
 
 }

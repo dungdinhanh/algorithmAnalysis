@@ -19,7 +19,7 @@ public class WindowTSP extends JFrame {
     private Panel panel;
     private City[] cities;
     private Chromosome chromosome;
-    private int maxX, maxY;
+    private double maxX, maxY;
     private double scaleX, scaleY;
 
     /**

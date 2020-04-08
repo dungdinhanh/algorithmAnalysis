@@ -1,8 +1,10 @@
 package GA.IO;
 
 import GA.GeneticObjects.City;
+import GA.IO.Token;
 
 import java.io.*;
+import java.util.StringTokenizer;
 
 /**
  * Helper class for reading the provided data sets and converting it to an array of City objects.
@@ -26,17 +28,53 @@ public class Import {
         String[] words = lines[3].split(" ");
         int numOfCities = Integer.parseInt(words[words.length-1]);
         City[] cities = new City[numOfCities];
+        int count = 0;
+        try {
+            BufferedReader in = new BufferedReader(new FileReader(dataPath));
+            String line;
+            while((line = in.readLine()) != null) {
+                try {
+                   Token tokens = getTokens(line);
+                   double x = tokens.getX();
+                   double y = tokens.getY();
+                   String cityName = String.valueOf(tokens.getId());
+                   City city = new City(cityName, x, y);
 
-        // Read each line and turn it into a City.
-        for (int i = startingLine; i < startingLine+numOfCities; i++) {
-            String[] line = removeWhiteSpace(lines[i]).trim().split(" ");
-            int x = (int)Double.parseDouble(line[1].trim());
-            int y = (int)Double.parseDouble(line[2].trim());
-            City city = new City(line[0], x, y);
-            cities[i-startingLine] = city;
+                    cities[count] = city;
+                    count += 1;
+                } catch(IllegalArgumentException e) {}
+            }
+            in.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
+        // Read each line and turn it into a City.
+//        for (int i = startingLine; i < startingLine+numOfCities; i++) {
+//            String[] line = removeWhiteSpace(lines[i]).trim().split(" ");
+//            int x = (int)Double.parseDouble(line[1].trim());
+//            int y = (int)Double.parseDouble(line[2].trim());
+//            City city = new City(line[0], x, y);
+//            cities[i-startingLine] = city;
+//        }
+
         return cities;
+    }
+
+
+    public static Token getTokens(String line) throws IllegalArgumentException {
+        StringTokenizer tokenizer = new StringTokenizer(line);
+        try {
+            int id = Integer.parseInt(tokenizer.nextToken());
+            double x = Double.parseDouble(tokenizer.nextToken());
+            double y = Double.parseDouble(tokenizer.nextToken());
+
+            if(!tokenizer.hasMoreTokens()) {
+                return new Token(id, x, y);
+            }
+
+        } catch(Exception e) {}
+        throw new IllegalArgumentException();
     }
 
     public static City[] getCities (DataSet dataSet) {

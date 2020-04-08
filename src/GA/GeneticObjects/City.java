@@ -9,7 +9,7 @@ import java.util.Random;
 public class City {
 
     private String name;
-    private int x, y;
+    private double x, y;
 
     /**
      * Constructs the City.
@@ -17,7 +17,7 @@ public class City {
      * @param x     the x coordinate
      * @param y     the y coordinate
      */
-    public City (String name, int x, int y) {
+    public City (String name, double x, double y) {
         this.name = name;
         this.x = x;
         this.y = y;
@@ -27,11 +27,11 @@ public class City {
         return name;
     }
 
-    public int getX () {
+    public double getX () {
         return x;
     }
 
-    public int getY () {
+    public double getY () {
         return y;
     }
 
@@ -78,14 +78,14 @@ public class City {
      */
     public static double distance (City city1, City city2) {
 
-        int x1 = city1.getX();
-        int y1 = city1.getY();
+        double x1 = city1.getX();
+        double y1 = city1.getY();
 
-        int x2 = city2.getX();
-        int y2 = city2.getY();
+        double x2 = city2.getX();
+        double y2 = city2.getY();
 
-        int xDiff = x2 - x1;
-        int yDiff = y2 - y1;
+        double xDiff = x2 - x1;
+        double yDiff = y2 - y1;
 
         return Math.sqrt(xDiff*xDiff + yDiff*yDiff);
     }
@@ -106,8 +106,8 @@ public class City {
     @Override
     public int hashCode() {
         int result = name.hashCode();
-        result = 31 * result + x;
-        result = 31 * result + y;
+        result = (int)(31 * result + x);
+        result = (int)(31 * result + y);
         return result;
     }
 
