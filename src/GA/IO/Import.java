@@ -30,7 +30,9 @@ public class Import {
         for(int i =0; i < lines.length; i++)
         {
             String[] words = lines[i].split(" ");
-            if(words[0].equals("DIMENSION:"))
+            String word = words[0];
+            String word0 = word.split(":")[0];
+            if(word0.equals("DIMENSION"))
             {
                 numOfCities = Integer.parseInt(words[words.length-1]);
                 break;

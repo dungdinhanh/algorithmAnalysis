@@ -53,8 +53,8 @@ public class Preset {
         r.setSeed(seed);
 
         // Parameters.
-        int     popSize         = 300;      // Size of the population.
-        int     maxGen          = 300;      // Number of generations to run.
+        int     popSize         = 500;      // Size of the population.
+        int     maxGen          = 500;      // Number of generations to run.
         double  crossoverRate   = 0.90;     // Odds that crossover will occur.
         double  mutationRate    = 0.04;     // Odds that mutation will occur.
 
@@ -71,7 +71,7 @@ public class Preset {
         geneticAlgorithm.setRandom(r);
         geneticAlgorithm.forceUniqueness(false);
         geneticAlgorithm.setLocalSearchRate(0.00);
-        geneticAlgorithm.setCrossoverType(GeneticAlgorithm.CrossoverType.TWO_POINT);
+        geneticAlgorithm.setCrossoverType(GeneticAlgorithm.CrossoverType.UNIFORM_ORDER);
         geneticAlgorithm.setMutationType(GeneticAlgorithm.MutationType.INSERTION);
 
         return geneticAlgorithm;
