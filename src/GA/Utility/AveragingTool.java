@@ -37,8 +37,6 @@ public class AveragingTool {
             runningTime.add(time);
             bestValuesAllGen.add(geneticAlgorithm.getBestDistanceOfLastGeneration());
 
-
-
         }
 
 
