@@ -40,11 +40,13 @@ public class LKRunM {
             Interpreter in = new Interpreter(listOfFiles[i]);
 
             // Create the instance of the problem
-            LinKernighan lk = new LinKernighan(in.getCoordinates(), in.getIds());
-
-            AveragingTool avg = new AveragingTool(lk, 30);
-            double[] results = avg.run();
-            FileInteract.appendToFile(results, outputType.toString() + "/lkspt.csv", listOfFiles[i].getName());
+            String name = listOfFiles[i].getName();
+            if (listOfFiles[i].isFile() && name.substring(name.length() - 3).equalsIgnoreCase("tsp")) {
+                LinKernighan lk = new LinKernighan(in.getCoordinates(), in.getIds());
+                AveragingTool avg = new AveragingTool(lk, 30);
+                double[] results = avg.run();
+                FileInteract.appendToFile(results, outputType.toString() + "/lkspt.csv", listOfFiles[i].getName());
+            }
         }
         
 	}

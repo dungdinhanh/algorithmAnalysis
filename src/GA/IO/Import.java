@@ -25,10 +25,33 @@ public class Import {
 
 
         String[] lines = read(dataPath).split("\n");
-        String[] words = lines[3].split(" ");
-        int numOfCities = Integer.parseInt(words[words.length-1]);
-        City[] cities = new City[numOfCities];
         int count = 0;
+        int numOfCities=0;
+        while(true)
+        {
+            String[] words = lines[count].split(" ");
+            if(words[0].equals("DIMENSION:"))
+            {
+                numOfCities = Integer.parseInt(words[words.length-1]);
+                break;
+            }
+        }
+        count = 0;
+        for(int i =0; i < lines.length; i++)
+        {
+
+            String[] type = lines[count].split(" ");
+            if(type[0].equals("EDGE_WEIGHT_FORMAT:"))
+            {
+                if (type[type.length -1].equals("UPPER_ROW")) return null;
+                if (type[type.length -1].equals("UPPER_DIAG_ROW")) return null;
+            }
+        }
+
+
+
+        City[] cities = new City[numOfCities];
+        count = 0;
         try {
             BufferedReader in = new BufferedReader(new FileReader(dataPath));
             String line;

@@ -133,6 +133,7 @@ public class Population implements Iterable<Chromosome> {
 
     public static Population fromDataSet (int popSize, String dataPath, Random r) {
         City[] cities = GA.IO.Import.getCities(dataPath);
+        if (cities == null) return null;
         Population population = new Population(popSize);
         population.populate(cities, r);
         return population;
