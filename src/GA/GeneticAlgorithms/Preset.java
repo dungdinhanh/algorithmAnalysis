@@ -71,7 +71,7 @@ public class Preset {
         geneticAlgorithm.setRandom(r);
         geneticAlgorithm.forceUniqueness(false);
         geneticAlgorithm.setLocalSearchRate(0.00);
-        geneticAlgorithm.setCrossoverType(GeneticAlgorithm.CrossoverType.ONE_POINT);
+        geneticAlgorithm.setCrossoverType(GeneticAlgorithm.CrossoverType.TWO_POINT);
         geneticAlgorithm.setMutationType(GeneticAlgorithm.MutationType.INSERTION);
 
         return geneticAlgorithm;
