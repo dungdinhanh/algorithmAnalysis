@@ -17,12 +17,12 @@ public class Main {
         File output = new File("src/output");
         output.mkdirs();
 
-        for (int i = 0; i < listOfFiles.length; i++) {
-            String name = listOfFiles[i].getName();
-            if (listOfFiles[i].isFile() && name.substring(name.length() - 3).equalsIgnoreCase("tsp")) {
-                System.out.println("  [" + i + "] " + listOfFiles[i].getName());
-            }
-        }
+//        for (int i = 0; i < listOfFiles.length; i++) {
+//            String name = listOfFiles[i].getName();
+//            if (listOfFiles[i].isFile() && name.substring(name.length() - 3).equalsIgnoreCase("tsp")) {
+//                System.out.println("  [" + i + "] " + listOfFiles[i].getName());
+//            }
+//        }
 
         File outputType = new File("src/output/" + args[0]);
         outputType.mkdirs();
@@ -30,13 +30,18 @@ public class Main {
 
         for (int i = 0; i < listOfFiles.length; i++)
         {
-
-            GeneticAlgorithm geneticAlgorithm = Preset.getGA(listOfFiles[i].toString());
-
-            AveragingTool avg = new AveragingTool(geneticAlgorithm, 30);
-            double[] results = avg.run();
-            FileInteract.appendToFile(results, outputType.toString() + "/gatsp.csv", listOfFiles[i].getName());
-//            FileInteract.appendToFile(results, "src/output/gatsp.csv", listOfFiles[i].getName());
+            double []results = {0.0, 0.0, 0.0};
+            String name = listOfFiles[i].getName();
+            if (listOfFiles[i].isFile() && name.substring(name.length() - 3).equalsIgnoreCase("tsp")) {
+                System.out.println("  [" + i + "] " + listOfFiles[i].getName());
+                GeneticAlgorithm geneticAlgorithm = Preset.getGA(listOfFiles[i].toString());
+                if(geneticAlgorithm != null){
+                    AveragingTool avg = new AveragingTool(geneticAlgorithm, 30);
+                    results = avg.run();
+                }
+                FileInteract.appendToFile(results, outputType.toString() + "/gatsp.csv", listOfFiles[i].getName());
+            }
+            //            FileInteract.appendToFile(results, "src/output/gatsp.csv", listOfFiles[i].getName());
         }
 //        double result = geneticAlgorithm.run();
 //        geneticAlgorithm.showGraphInWindow();

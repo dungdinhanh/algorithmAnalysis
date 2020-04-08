@@ -1,7 +1,9 @@
 package GA.GeneticAlgorithms;
 
+import GA.GeneticObjects.Population;
 import GA.IO.Import.DataSet;
 
+import java.awt.*;
 import java.util.Random;
 
 import static GA.GeneticObjects.Population.fromDataSet;
@@ -46,19 +48,20 @@ public class Preset {
 
         Random random = new Random();
         long seed = random.nextLong();
-        System.out.println("Seed: " + seed);
+//        System.out.println("Seed: " + seed);
         Random r = new Random();
         r.setSeed(seed);
 
         // Parameters.
-        int     popSize         = 500;      // Size of the population.
-        int     maxGen          = 500;      // Number of generations to run.
+        int     popSize         = 300;      // Size of the population.
+        int     maxGen          = 300;      // Number of generations to run.
         double  crossoverRate   = 0.90;     // Odds that crossover will occur.
         double  mutationRate    = 0.04;     // Odds that mutation will occur.
 
         GeneticAlgorithm geneticAlgorithm = new GeneticAlgorithm();
-
-        geneticAlgorithm.setPopulation(fromDataSet(popSize, dataPath, r));
+        Population population = fromDataSet(popSize, dataPath, r);
+        if (population == null)return null;
+        geneticAlgorithm.setPopulation(population);
         //geneticAlgorithm.setPopulation(Population.getRandomPopulation(100, popSize, r));
         geneticAlgorithm.setMaxGen(maxGen);
         geneticAlgorithm.setK(3);
@@ -68,7 +71,7 @@ public class Preset {
         geneticAlgorithm.setRandom(r);
         geneticAlgorithm.forceUniqueness(false);
         geneticAlgorithm.setLocalSearchRate(0.00);
-        geneticAlgorithm.setCrossoverType(GeneticAlgorithm.CrossoverType.UNIFORM_ORDER);
+        geneticAlgorithm.setCrossoverType(GeneticAlgorithm.CrossoverType.ONE_POINT);
         geneticAlgorithm.setMutationType(GeneticAlgorithm.MutationType.INSERTION);
 
         return geneticAlgorithm;
