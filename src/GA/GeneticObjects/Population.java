@@ -36,6 +36,13 @@ public class Population implements Iterable<Chromosome> {
         chromosomes.add(chromosome);
     }
 
+    public void add (Chromosome chromosome, boolean gen) {
+        if (!gen) {
+            add(chromosome);
+        }
+        chromosomes.add(chromosome);
+    }
+
     public void populate (City[] cities, Random random) {
 
         if (chromosomes.size() == maxSize) {

@@ -235,12 +235,23 @@ public class GeneticAlgorithm {
     }
 
     public double run () {
+        double tempBest = Double.MAX_VALUE;
+        int patience = 0;
         for (int i = 0; i < maxGen; i++) {
             population = createNextGeneration();
             averageDistanceOfEachGeneration.add(population.getAverageDistance());
             areaUnderAverageDistances += population.getAverageDistance();
             bestDistanceOfEachGeneration.add(population.getMostFit().getDistance());
             areaUnderBestDistances += population.getMostFit().getDistance();
+            if (tempBest > bestDistanceOfLastGeneration) {
+                tempBest = bestDistanceOfFirstGeneration;
+                patience = 0;
+            }
+            else if (tempBest == bestDistanceOfFirstGeneration)
+            {
+                patience += 1;
+            }
+            if (patience == 100) break;
         }
         finished = true;
         averageDistanceOfLastGeneration = population.getAverageDistance();
@@ -290,9 +301,13 @@ public class GeneticAlgorithm {
         performElitism(nextGen);
 
         HashSet<Chromosome> chromosomesAdded = new HashSet<>(); // For checking duplicates.
+        int i =0 ;
 
-        while (nextGen.size() < population.size()-1) {
+//        while (nextGen.size() < population.size()-1) {
+        while (i < population.size()) {
 
+            nextGen.add(population.getChromosomes()[i], true);
+//            System.out.println(i);
             Chromosome p1 = Selection.tournamentSelection(population, k, random);
             Chromosome p2 = Selection.tournamentSelection(population, k, random);
 
@@ -311,35 +326,35 @@ public class GeneticAlgorithm {
             if (doMutate1) p1 = mutate(p1);
             if (doMutate2) p2 = mutate(p2);
 
-            if (doLocalSearch1) p1 = performLocalSearch(p1);
-            if (doLocalSearch2) p2 = performLocalSearch(p2);
+//            if (doLocalSearch1) p1 = performLocalSearch(p1);
+//            if (doLocalSearch2) p2 = performLocalSearch(p2);
 
             if (forceUniqueness) {
                 if (!chromosomesAdded.contains(p1)) {
                     chromosomesAdded.add(p1);
-                    nextGen.add(p1);
+                    nextGen.add(p1, true);
                 }
 
                 if (!chromosomesAdded.contains(p2)) {
                     chromosomesAdded.add(p2);
-                    nextGen.add(p2);
+                    nextGen.add(p2, true);
                 }
             } else {
-                nextGen.add(p1);
-                nextGen.add(p2);
+                nextGen.add(p1, true);
+                nextGen.add(p2, true);
             }
-
+            i++;
         }
 
         // If there is one space left, fill it up.
         if (nextGen.size() != population.size()) {
-            nextGen.add(Selection.tournamentSelection(population, k, random));
+//            nextGen.add(Selection.tournamentSelection(population, k, random));
+            nextGen = elitistSelection(nextGen, population.size());
         }
 
         if (nextGen.size() != population.size()) {
             throw new AssertionError("Next generation population should be full.");
         }
-
         return nextGen;
     }
 
@@ -363,6 +378,30 @@ public class GeneticAlgorithm {
 
             nextGen.add(chromosome);
         }
+    }
+
+    private Population elitistSelection(Population currentGen, int size)
+    {
+        PriorityQueue<Chromosome> priorityQueue = new PriorityQueue<>();
+        Population nextGen = new Population(size);
+        for (Chromosome chromosome : currentGen) {
+            priorityQueue.add(chromosome);
+        }
+
+        for (int i = 0; i < size; i++) {
+
+            Chromosome chromosome = priorityQueue.poll();
+
+            if (localSearchRate > 0) {
+                chromosome = performLocalSearch(chromosome);
+            }
+
+            //if (random.nextDouble() < localSearchRate)
+            //    chromosome = performLocalSearch(chromosome);
+
+            nextGen.add(chromosome);
+        }
+        return nextGen;
     }
 
     private Chromosome performLocalSearch (Chromosome chromosome) {
