@@ -23,8 +23,8 @@ public class Preset {
         // Parameters.
         int     popSize         = 500;      // Size of the population.
         int     maxGen          = 500;      // Number of generations to run.
-        double  crossoverRate   = 0.90;     // Odds that crossover will occur.
-        double  mutationRate    = 0.04;     // Odds that mutation will occur.
+        double  crossoverRate   = 0.8;     // Odds that crossover will occur.
+        double  mutationRate    = 0.05;     // Odds that mutation will occur.
 
         GeneticAlgorithm geneticAlgorithm = new GeneticAlgorithm();
 
@@ -53,10 +53,10 @@ public class Preset {
         r.setSeed(seed);
 
         // Parameters.
-        int     popSize         = 500;      // Size of the population.
-        int     maxGen          = 500;      // Number of generations to run.
-        double  crossoverRate   = 0.90;     // Odds that crossover will occur.
-        double  mutationRate    = 0.04;     // Odds that mutation will occur.
+        int     popSize         = 700;      // Size of the population.
+        int     maxGen          = 10000;      // Number of generations to run.
+        double  crossoverRate   = 0.95;     // Odds that crossover will occur.
+        double  mutationRate    = 0.2;     // Odds that mutation will occur.
 
         GeneticAlgorithm geneticAlgorithm = new GeneticAlgorithm();
         Population population = fromDataSet(popSize, dataPath, r);
@@ -71,8 +71,8 @@ public class Preset {
         geneticAlgorithm.setRandom(r);
         geneticAlgorithm.forceUniqueness(false);
         geneticAlgorithm.setLocalSearchRate(0.00);
-        geneticAlgorithm.setCrossoverType(GeneticAlgorithm.CrossoverType.UNIFORM_ORDER);
-        geneticAlgorithm.setMutationType(GeneticAlgorithm.MutationType.INSERTION);
+        geneticAlgorithm.setCrossoverType(GeneticAlgorithm.CrossoverType.TWO_POINT);
+        geneticAlgorithm.setMutationType(GeneticAlgorithm.MutationType.RECIPROCAL_EXCHANGE);
 
         return geneticAlgorithm;
     }

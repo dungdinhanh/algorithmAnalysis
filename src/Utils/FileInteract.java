@@ -19,5 +19,19 @@ public class FileInteract {
         }
     }
 
+    public static void appendToFileB(int result, String outputFile, String fileName)
+    {
+        try{
+            FileWriter csvWriter = new FileWriter(outputFile, true);
+            String row = fileName+ ", " + result + "\n";
+            csvWriter.write(row);
+            csvWriter.close();
+
+        }catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
 
 }
