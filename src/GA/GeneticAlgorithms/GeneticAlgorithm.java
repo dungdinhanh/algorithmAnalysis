@@ -237,25 +237,31 @@ public class GeneticAlgorithm {
     public double run () {
         double tempBest = Double.MAX_VALUE;
         int patience = 0;
+        int currentGen = 0;
         for (int i = 0; i < maxGen; i++) {
             population = createNextGeneration();
             averageDistanceOfEachGeneration.add(population.getAverageDistance());
             areaUnderAverageDistances += population.getAverageDistance();
             bestDistanceOfEachGeneration.add(population.getMostFit().getDistance());
+            bestDistanceOfLastGeneration = population.getMostFit().getDistance();
             areaUnderBestDistances += population.getMostFit().getDistance();
+
             if (tempBest > bestDistanceOfLastGeneration) {
                 tempBest = bestDistanceOfFirstGeneration;
                 patience = 0;
             }
-            else if (tempBest == bestDistanceOfFirstGeneration)
+            else if (tempBest == bestDistanceOfLastGeneration)
             {
                 patience += 1;
             }
-            if (patience == 100) break;
+            if (patience >= 300) break;
+            currentGen ++;
+            System.out.println("Current gen: " + currentGen + " Objective: " + bestDistanceOfLastGeneration);
         }
         finished = true;
         averageDistanceOfLastGeneration = population.getAverageDistance();
         bestDistanceOfLastGeneration = population.getMostFit().getDistance();
+        System.out.println("Max Generation " + currentGen);
         return bestDistanceOfLastGeneration;
     }
 
