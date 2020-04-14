@@ -31,6 +31,19 @@ public:
         return !equal(tour.begin(), tour.end(), t.tour.begin());
     }
 
+private:
+bool is_number(std::string str)
+	{
+	for(int i = 0;i < str.length() - 1; i++) 
+        {
+            if((int)str[i] < 10) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+	}
+
 public:
     void input_file(const std::string& filename){
 
@@ -62,9 +75,19 @@ public:
 
         tour.resize(size);
 
-        for(int i = 0; i < size; i++){
+        int i = 0;
+        int pass = 1;
+        int checked = 0;
+        while(1){
             std::getline(inputfile, str);
-            sscanf(str.data(), "%d %lf %lf", &tour[i].id,  &tour[i].x, &tour[i].y);
+            std::string data_str = str;
+            std::string token = str.substr(0, str.find(" "));
+            int j;
+            if (!is_number(token))continue;
+
+            sscanf(data_str.data(), "%d %lf %lf", &tour[i].id,  &tour[i].x, &tour[i].y);
+            i++;
+            if(i == size)break;
         }
         inputfile.close();
     }
