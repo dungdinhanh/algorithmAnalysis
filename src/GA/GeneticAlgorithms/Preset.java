@@ -55,8 +55,8 @@ public class Preset {
         // Parameters.
         int     popSize         = 700;      // Size of the population.
         int     maxGen          = 10000;      // Number of generations to run.
-        double  crossoverRate   = 0.95;     // Odds that crossover will occur.
-        double  mutationRate    = 0.2;     // Odds that mutation will occur.
+        double  crossoverRate   = 0.9;     // Odds that crossover will occur.
+        double  mutationRate    = 0.05;     // Odds that mutation will occur.
 
         GeneticAlgorithm geneticAlgorithm = new GeneticAlgorithm();
         Population population = fromDataSet(popSize, dataPath, r);
