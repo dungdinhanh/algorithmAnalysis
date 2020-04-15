@@ -1,4 +1,4 @@
-#ifndef tour_hpp
+﻿#ifndef tour_hpp
 #define tour_hpp
 
 #include <iostream>

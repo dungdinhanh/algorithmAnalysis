@@ -214,6 +214,7 @@ public:
                   
                     depth++;
                     list_itr++;
+
                 }
               
                 if(prev != cycle.tour[current - 1].left){
@@ -223,7 +224,7 @@ public:
                     prev = current;			
                     current = cycle.tour[current - 1].right;			
                 }
-                std::cout<<"nothing here10"<<std::endl;
+          
             }
 
             // 繋ぎ変え
@@ -232,25 +233,25 @@ public:
             }else{
                 cycle.tour[p1 - 1].right = p3;
             }
-            std::cout<<"nothing here14"<<std::endl;
+     
             if(cycle.tour[p2 - 1].left == p1){
                 cycle.tour[p2 - 1].left = p4;
             }else{
                 cycle.tour[p2 - 1].right = p4;
             }
-            std::cout<<"nothing here15"<<std::endl;
+    
             if(cycle.tour[p3 - 1].left == p4){
                 cycle.tour[p3 - 1].left = p1;
             }else{
                 cycle.tour[p3 - 1].right = p1;
             }
-            std::cout<<"nothing here16"<<std::endl;
+   
             if(cycle.tour[p4 - 1].left == p3){
                 cycle.tour[p4 - 1].left = p2;
             }else{
                 cycle.tour[p4 - 1].right = p2;
             }
-            std::cout<<"nothing here11"<<std::endl;
+      
 
             // 島の大きさを接続先の島に増やして, 先頭の島(最小の島)を消す
             for(int i = 1; i < mapping.size(); i++){
@@ -259,7 +260,7 @@ public:
                 }
             }
 
-            std::cout<<"nothing here12"<<std::endl;
+    
             int island_num = numbering[p1 - 1];
             for(int i = 0; i < cycle.size; i++){
                 if(numbering[i] == island_num){
@@ -267,7 +268,6 @@ public:
                 }
             }
             mapping.erase(mapping.begin());	
-            std::cout<<"nothing here13"<<std::endl;
         }
     }
 
