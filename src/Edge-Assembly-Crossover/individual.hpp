@@ -135,7 +135,6 @@ public:
         //島のナンバリングと大きさ, ノードなどの登録
         int sum = 0, size = 0, num = 1;
         int prev = 0, current = 1, target = current;
-        
         while(true){
             if(numbering[current - 1] == 0){
                 numbering[current - 1] = num;
@@ -154,6 +153,7 @@ public:
                         break;
                     }
                 }
+                
             }
 
             if(prev != cycle.tour[current - 1].left){
@@ -167,7 +167,6 @@ public:
 
         // 最小の島のエッジと最も評価が良くなるエッジを探す
         while(mapping.size() != 1){
-
             int t1, t2, t3, t4;
             int p1, p2, p3, p4;
             int min_distance;
@@ -182,7 +181,6 @@ public:
                 int depth = 0;
                 auto list_itr = NNlist[current].begin();
                 while(depth < DEPTH){
-
                     // 近傍のノードが自身の島だった場合
                     if(numbering[current - 1] == numbering[list_itr->second - 1]){
                         depth++;

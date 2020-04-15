@@ -121,23 +121,26 @@ Individual EAX(const Individual& parentA, const Individual& parentB, const std::
 
     std::vector<Tour> Eset;
     std::vector<Individual> children(CHILDREN, parentA);
-
+    
     // Esetの生成
     ABcycle(parentA, parentB, Eset);
-    
+   
     for(int i = 0; i < CHILDREN; i++){
-
+        
         // 緩和個体に分ける
         children[i].divide_tour(Eset);
-
+     
         // 島同士の接続
         children[i].conect_subtour(cost, NNlist);
+        
 
         // 生成された子個体を評価する
         children[i].evaluate(cost);
+    
     }
     children.push_back(parentA);
     children.push_back(parentB);
+
     return *min_element(children.begin(), children.end());;
 }
 

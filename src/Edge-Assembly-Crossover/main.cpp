@@ -45,7 +45,7 @@ int main(int argc, char* argv[]){
         std::cout << "population : " << POPULATION << std::endl;
         std::cout << "children : " << CHILDREN << std::endl;
 
-        std::string outfilename = "./result/" + std::string(argv[1]) + "_" + std::to_string(POPULATION) + "_" + std::to_string(CHILDREN) + ".txt";
+        std::string outfilename = "./result/" + std::string(data_name) + "_" + std::to_string(POPULATION) + "_" + std::to_string(CHILDREN) + ".txt";
         std::ofstream outputfile(outfilename);
         outputfile << "Instance : " << data_name << std::endl;
         outputfile << "opt distance : " << OPT_DIST << std::endl;
@@ -75,21 +75,18 @@ int main(int argc, char* argv[]){
             double min, max, ave;
             std::cout << "gene" << '\t' << "min" << '\t' << "max" << '\t' << "ave" << std::endl;
             outputfile << "gene" << '\t' << "min" << '\t' << "max" << '\t' << "ave" << std::endl;
-        
+
             for(int j = 0; j < GENERATION; j++){
-                std::cout<<"pass the first loop";
                 for(int k = 0; k < POPULATION; k++){
 
                     // 親の選択
                     Individual parentA = population[k];
                     Individual parentB = population[(k + 1) % POPULATION];
-
+                  
                     // 交叉
                     next_population[k] = EAX(parentA, parentB, cost, NNlist);
-                    std::cout<<"Struggled here ?";
                 }
                 
-                std::cout<<"Before outputing";
                 population = next_population;
 
                 analyze(population, min, max, ave);
