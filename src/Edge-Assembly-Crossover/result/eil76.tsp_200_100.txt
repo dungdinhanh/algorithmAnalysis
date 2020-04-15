@@ -1,0 +1,20 @@
+Instance : eil76.tsp
+opt distance : 6773
+trial : 1
+generation : 100
+population : 200
+children : 100
+trial...1
+gene	min	max	ave
+1	547	586	565.46
+2	543	574	555.25
+3	539	557	548.515
+4	538	552	544.145
+5	538	549	541.33
+6	538	546	539.25
+7	538	542	538.23
+8	538	540	538.02
+9	538	538	538
+opt count : 0
+opt average : 538
+convergence generation : 9

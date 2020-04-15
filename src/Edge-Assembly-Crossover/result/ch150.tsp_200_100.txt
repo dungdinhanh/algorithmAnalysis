@@ -1,0 +1,22 @@
+Instance : ch150.tsp
+opt distance : 6773
+trial : 1
+generation : 100
+population : 200
+children : 100
+trial...1
+gene	min	max	ave
+1	6688	7231	6942.67
+2	6583	6971	6774.39
+3	6538	6845	6667.76
+4	6528	6718	6602.08
+5	6528	6666	6565.68
+6	6528	6601	6547.48
+7	6528	6575	6537.21
+8	6528	6554	6531.64
+9	6528	6549	6529.28
+10	6528	6533	6528.02
+11	6528	6528	6528
+opt count : 0
+opt average : 6528
+convergence generation : 11

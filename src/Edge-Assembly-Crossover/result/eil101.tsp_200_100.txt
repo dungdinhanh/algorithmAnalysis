@@ -1,0 +1,22 @@
+Instance : eil101.tsp
+opt distance : 6773
+trial : 1
+generation : 100
+population : 200
+children : 100
+trial...1
+gene	min	max	ave
+1	641	689	664.89
+2	636	669	652.175
+3	631	661	644.035
+4	629	650	638.295
+5	629	643	634.155
+6	629	638	631.21
+7	629	636	629.71
+8	629	630	629.235
+9	629	630	629.065
+10	629	630	629.005
+11	629	629	629
+opt count : 0
+opt average : 629
+convergence generation : 11

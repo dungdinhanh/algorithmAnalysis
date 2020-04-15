@@ -1,0 +1,22 @@
+Instance : gr202.tsp
+opt distance : 6773
+trial : 1
+generation : 100
+population : 200
+children : 100
+trial...1
+gene	min	max	ave
+1	496	521	505.765
+2	489	506	497.275
+3	486	498	491.56
+4	484	494	487.67
+5	481	489	484.825
+6	481	486	483.09
+7	481	484	481.9
+8	481	483	481.32
+9	481	482	481.08
+10	481	482	481.005
+11	481	481	481
+opt count : 0
+opt average : 481
+convergence generation : 11

@@ -1,0 +1,20 @@
+Instance : bayg29.tsp
+opt distance : 6773
+trial : 1
+generation : 100
+population : 200
+children : 100
+trial...1
+gene	min	max	ave
+1	9073	9601	9209.8
+2	9073	9355	9121.46
+3	9073	9196	9088.23
+4	9073	9120	9078.85
+5	9073	9077	9074.98
+6	9073	9077	9073.9
+7	9073	9077	9073.14
+8	9073	9077	9073.02
+9	9073	9073	9073
+opt count : 0
+opt average : 9073
+convergence generation : 9

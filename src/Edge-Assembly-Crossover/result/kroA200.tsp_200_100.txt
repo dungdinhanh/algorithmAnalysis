@@ -1,0 +1,21 @@
+Instance : kroA200.tsp
+opt distance : 6773
+trial : 1
+generation : 100
+population : 200
+children : 100
+trial...1
+gene	min	max	ave
+1	29963	32389	31318
+2	29721	31427	30604.4
+3	29507	30764	30100.3
+4	29443	30401	29767.4
+5	29368	29954	29553.9
+6	29368	29647	29438.2
+7	29368	29524	29385.2
+8	29368	29398	29370.8
+9	29368	29383	29368.3
+10	29368	29368	29368
+opt count : 0
+opt average : 29368
+convergence generation : 10

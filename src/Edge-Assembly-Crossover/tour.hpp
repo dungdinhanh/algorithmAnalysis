@@ -93,21 +93,28 @@ public:
         int i = 0;
         int check = 0;
         while(1){
-            std::getline(inputfile, str);
-            if(str.empty())break;
-            char *data_str = (char *)malloc(sizeof(char) * (str.size() + 1));
-            strcpy(data_str, str.c_str());
-            char *token = strtok(data_str, " ");
-            std::cout<<token<<std::endl;
-            if(!is_number_str(token))continue;
-            int count = 0;
-            while(token != NULL){
-                count += 1;
-                token = strtok(NULL, " \n");
+             std::getline(inputfile, str);
+            if(! check)
+            {
+                if(str.empty())break;
+                char *data_str = (char *)malloc(sizeof(char) * (str.size() + 1));
+                strcpy(data_str, str.c_str());
+                char *token = strtok(data_str, " ");
+                std::cout<<token<<std::endl;
+                if(!is_number_str(token))continue;
+                int first_id = atoi(token);
+                if(first_id != 1)continue;
+                int count = 0;
+                while(token != NULL){
+                    count += 1;
+                    token = strtok(NULL, " \n");
+                }
+                if(count != 3)continue;
+                check = 1;
             }
-            if(count != 3)continue;
             
-            check = 1;
+            
+            
 
             sscanf(str.data(), "%d %lf %lf", &tour[i].id,  &tour[i].x, &tour[i].y);
             std::cout<<i<<" , "<<tour[i].id << ", " << tour[i].x << " , "<<tour[i].y << std::endl;
