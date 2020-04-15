@@ -25,7 +25,7 @@ int main(int argc, char* argv[]){
     std::ofstream outputfile2(ga_sum_file);
     while((entry= readdir(dir)) != NULL)
     {
-        std::cout<<"Helloworld"<<std::endl;
+        
         std::string filename(entry->d_name);
         filename = "./TSPLIB/" + filename;
         std::string data_name(entry->d_name);
@@ -33,7 +33,6 @@ int main(int argc, char* argv[]){
         Tour data;
 
         data.input_file(filename);
-        std::cout<<"Helloworld"<<std::endl;
         // 近傍リストの作成・コスト表の作成
         std::vector<std::vector<int> > cost(data.size + 1, std::vector<int>(data.size + 1, 0));
         std::vector<std::list<std::pair<int, int> > > NNlist(data.size + 1);
@@ -78,7 +77,7 @@ int main(int argc, char* argv[]){
             outputfile << "gene" << '\t' << "min" << '\t' << "max" << '\t' << "ave" << std::endl;
         
             for(int j = 0; j < GENERATION; j++){
-
+                std::cout<<"pass the first loop";
                 for(int k = 0; k < POPULATION; k++){
 
                     // 親の選択
@@ -87,8 +86,10 @@ int main(int argc, char* argv[]){
 
                     // 交叉
                     next_population[k] = EAX(parentA, parentB, cost, NNlist);
+                    std::cout<<"Struggled here ?";
                 }
-
+                
+                std::cout<<"Before outputing";
                 population = next_population;
 
                 analyze(population, min, max, ave);
@@ -107,15 +108,15 @@ int main(int argc, char* argv[]){
             }
     }
 
-    std::cout << "opt count : " << opt << std::endl;
-    std::cout << "opt average : " << opt_ave / TRIAL << std::endl;
-    std::cout << "convergence generation : " << conv_gene / TRIAL << std::endl;
-    
-    outputfile << "opt count : " << opt << std::endl;
-    outputfile << "opt average : " << opt_ave / TRIAL << std::endl;
-    outputfile << "convergence generation : " << conv_gene / TRIAL << std::endl;
-    outputfile2 << data_name << " , " << opt_ave / TRIAL << " , " << conv_gene/TRIAL << std::endl;
-    outputfile.close();
+        std::cout << "opt count : " << opt << std::endl;
+        std::cout << "opt average : " << opt_ave / TRIAL << std::endl;
+        std::cout << "convergence generation : " << conv_gene / TRIAL << std::endl;
+        
+        outputfile << "opt count : " << opt << std::endl;
+        outputfile << "opt average : " << opt_ave / TRIAL << std::endl;
+        outputfile << "convergence generation : " << conv_gene / TRIAL << std::endl;
+        outputfile2 << data_name << " , " << opt_ave / TRIAL << " , " << conv_gene/TRIAL << std::endl;
+        outputfile.close();
     }
 
     
