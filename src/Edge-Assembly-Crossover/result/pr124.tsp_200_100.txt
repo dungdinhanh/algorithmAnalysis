@@ -1,0 +1,18 @@
+Instance : pr124.tsp
+opt distance : 6773
+trial : 1
+generation : 100
+population : 200
+children : 100
+trial...1
+gene	min	max	ave
+1	59030	63541	60629.7
+2	59030	61833	59785.4
+3	59030	60681	59331.2
+4	59030	60445	59112.8
+5	59030	59271	59050.4
+6	59030	59087	59034.1
+7	59030	59030	59030
+opt count : 0
+opt average : 59030
+convergence generation : 7

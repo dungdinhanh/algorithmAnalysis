@@ -1,0 +1,20 @@
+Instance : gr120.tsp
+opt distance : 6773
+trial : 1
+generation : 100
+population : 200
+children : 100
+trial...1
+gene	min	max	ave
+1	1640	1747	1701.74
+2	1637	1708	1669.94
+3	1612	1682	1648.3
+4	1610	1661	1632.54
+5	1609	1646	1620.83
+6	1609	1630	1612.6
+7	1609	1622	1609.68
+8	1609	1620	1609.12
+9	1609	1609	1609
+opt count : 0
+opt average : 1609
+convergence generation : 9

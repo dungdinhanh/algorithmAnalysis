@@ -1,0 +1,19 @@
+Instance : kroD100.tsp
+opt distance : 6773
+trial : 1
+generation : 100
+population : 200
+children : 100
+trial...1
+gene	min	max	ave
+1	21557	23156	22318.8
+2	21338	22553	21879.2
+3	21294	22191	21618.6
+4	21294	21812	21430.7
+5	21294	21651	21337.7
+6	21294	21418	21300.8
+7	21294	21338	21294.5
+8	21294	21294	21294
+opt count : 0
+opt average : 21294
+convergence generation : 8

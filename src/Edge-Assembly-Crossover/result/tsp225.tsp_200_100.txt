@@ -1,0 +1,22 @@
+Instance : tsp225.tsp
+opt distance : 6773
+trial : 1
+generation : 100
+population : 200
+children : 100
+trial...1
+gene	min	max	ave
+1	4072	4314	4189.94
+2	4026	4208	4106.53
+3	3965	4121	4050.11
+4	3929	4087	4007.75
+5	3919	4022	3975.93
+6	3916	3993	3952.2
+7	3916	3972	3934.07
+8	3916	3956	3922.42
+9	3916	3932	3917.25
+10	3916	3923	3916.22
+11	3916	3916	3916
+opt count : 0
+opt average : 3916
+convergence generation : 11

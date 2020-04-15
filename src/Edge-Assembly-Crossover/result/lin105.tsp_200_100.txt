@@ -1,0 +1,17 @@
+Instance : lin105.tsp
+opt distance : 6773
+trial : 1
+generation : 100
+population : 200
+children : 100
+trial...1
+gene	min	max	ave
+1	14434	15961	14926.6
+2	14379	15146	14594.3
+3	14379	14836	14466.8
+4	14379	14574	14407.7
+5	14379	14496	14382.9
+6	14379	14379	14379
+opt count : 0
+opt average : 14379
+convergence generation : 6

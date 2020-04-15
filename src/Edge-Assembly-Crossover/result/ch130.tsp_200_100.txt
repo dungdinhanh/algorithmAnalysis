@@ -1,0 +1,22 @@
+Instance : ch130.tsp
+opt distance : 6773
+trial : 1
+generation : 100
+population : 200
+children : 100
+trial...1
+gene	min	max	ave
+1	6190	6666	6422.84
+2	6166	6497	6300.02
+3	6127	6391	6224.62
+4	6110	6280	6180.11
+5	6110	6210	6150.26
+6	6110	6179	6133.03
+7	6110	6155	6122.07
+8	6110	6130	6115.23
+9	6110	6128	6111.49
+10	6110	6124	6110.23
+11	6110	6110	6110
+opt count : 0
+opt average : 6110
+convergence generation : 11

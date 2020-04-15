@@ -1,0 +1,9 @@
+Instance : p654.tsp
+opt distance : 6773
+trial : 1
+generation : 100
+population : 200
+children : 100
+trial...1
+gene	min	max	ave
+1	33959	46272	39752.3

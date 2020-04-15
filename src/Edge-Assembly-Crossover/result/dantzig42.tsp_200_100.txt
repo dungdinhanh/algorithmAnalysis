@@ -1,0 +1,16 @@
+Instance : dantzig42.tsp
+opt distance : 6773
+trial : 1
+generation : 100
+population : 200
+children : 100
+trial...1
+gene	min	max	ave
+1	675	732	693
+2	675	716	682.425
+3	675	701	677.29
+4	675	684	675.18
+5	675	675	675
+opt count : 0
+opt average : 675
+convergence generation : 5

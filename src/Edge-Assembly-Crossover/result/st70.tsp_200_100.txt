@@ -1,0 +1,18 @@
+Instance : st70.tsp
+opt distance : 6773
+trial : 1
+generation : 100
+population : 200
+children : 100
+trial...1
+gene	min	max	ave
+1	675	735	701.945
+2	675	716	689.01
+3	675	704	682.135
+4	675	687	678.555
+5	675	684	676.37
+6	675	680	675.205
+7	675	675	675
+opt count : 0
+opt average : 675
+convergence generation : 7

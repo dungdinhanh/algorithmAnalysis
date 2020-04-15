@@ -1,0 +1,19 @@
+Instance : kroB100.tsp
+opt distance : 6773
+trial : 1
+generation : 100
+population : 200
+children : 100
+trial...1
+gene	min	max	ave
+1	22294	24265	23072
+2	22141	23460	22623.9
+3	22141	22820	22366.7
+4	22141	22536	22245
+5	22141	22335	22176.9
+6	22141	22220	22148
+7	22141	22199	22141.3
+8	22141	22141	22141
+opt count : 0
+opt average : 22141
+convergence generation : 8

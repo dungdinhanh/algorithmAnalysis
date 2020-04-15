@@ -1,0 +1,19 @@
+Instance : gr137.tsp
+opt distance : 6773
+trial : 1
+generation : 100
+population : 200
+children : 100
+trial...1
+gene	min	max	ave
+1	711	774	738.51
+2	702	744	719.98
+3	697	732	707.495
+4	697	714	700.42
+5	697	704	697.705
+6	697	699	697.095
+7	697	698	697.005
+8	697	697	697
+opt count : 0
+opt average : 697
+convergence generation : 8

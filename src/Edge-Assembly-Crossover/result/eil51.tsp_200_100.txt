@@ -1,0 +1,20 @@
+Instance : eil51.tsp
+opt distance : 6773
+trial : 1
+generation : 100
+population : 200
+children : 100
+trial...1
+gene	min	max	ave
+1	427	459	440.305
+2	427	443	433.815
+3	426	438	430.43
+4	426	434	428.3
+5	426	431	427.08
+6	426	431	426.575
+7	426	427	426.2
+8	426	427	426.04
+9	426	426	426
+opt count : 0
+opt average : 426
+convergence generation : 9

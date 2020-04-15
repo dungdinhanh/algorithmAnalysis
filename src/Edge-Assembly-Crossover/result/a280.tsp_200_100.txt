@@ -1,0 +1,21 @@
+Instance : a280.tsp
+opt distance : 6773
+trial : 1
+generation : 100
+population : 200
+children : 100
+trial...1
+gene	min	max	ave
+1	2685	2923	2804.03
+2	2634	2822	2721.26
+3	2608	2762	2661.8
+4	2587	2684	2623.09
+5	2579	2631	2599.76
+6	2579	2608	2586.31
+7	2579	2593	2580.53
+8	2579	2583	2579.22
+9	2579	2581	2579.01
+10	2579	2579	2579
+opt count : 0
+opt average : 2579
+convergence generation : 10

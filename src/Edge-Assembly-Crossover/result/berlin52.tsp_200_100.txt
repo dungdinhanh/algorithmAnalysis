@@ -1,0 +1,18 @@
+Instance : berlin52.tsp
+opt distance : 6773
+trial : 1
+generation : 100
+population : 200
+children : 100
+trial...1
+gene	min	max	ave
+1	7542	8482	7942.06
+2	7542	8160	7792.48
+3	7542	7934	7664.14
+4	7542	7912	7579.73
+5	7542	7667	7548.05
+6	7542	7596	7542.3
+7	7542	7542	7542
+opt count : 0
+opt average : 7542
+convergence generation : 7

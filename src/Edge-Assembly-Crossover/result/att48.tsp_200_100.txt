@@ -1,0 +1,18 @@
+Instance : att48.tsp
+opt distance : 6773
+trial : 1
+generation : 100
+population : 200
+children : 100
+trial...1
+gene	min	max	ave
+1	33522	35460	34237.8
+2	33522	34806	33909.9
+3	33522	34183	33685.3
+4	33522	33872	33587.8
+5	33522	33783	33545.2
+6	33522	33599	33525.8
+7	33522	33522	33522
+opt count : 0
+opt average : 33522
+convergence generation : 7

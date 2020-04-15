@@ -1,0 +1,18 @@
+Instance : u159.tsp
+opt distance : 6773
+trial : 1
+generation : 100
+population : 200
+children : 100
+trial...1
+gene	min	max	ave
+1	42618	47953	44859.2
+2	42138	46575	43550.5
+3	42080	45269	42720.8
+4	42080	42942	42267.2
+5	42080	42422	42111
+6	42080	42396	42082.3
+7	42080	42080	42080
+opt count : 0
+opt average : 42080
+convergence generation : 7

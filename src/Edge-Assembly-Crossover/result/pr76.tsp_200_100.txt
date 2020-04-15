@@ -1,0 +1,19 @@
+Instance : pr76.tsp
+opt distance : 6773
+trial : 1
+generation : 100
+population : 200
+children : 100
+trial...1
+gene	min	max	ave
+1	108395	116602	111561
+2	108351	113661	109870
+3	108159	111208	109059
+4	108159	109948	108560
+5	108159	109085	108271
+6	108159	108679	108170
+7	108159	108194	108160
+8	108159	108159	108159
+opt count : 0
+opt average : 108159
+convergence generation : 8

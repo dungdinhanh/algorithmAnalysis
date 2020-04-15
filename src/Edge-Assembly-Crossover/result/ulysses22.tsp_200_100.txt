@@ -1,0 +1,15 @@
+Instance : ulysses22.tsp
+opt distance : 6773
+trial : 1
+generation : 100
+population : 200
+children : 100
+trial...1
+gene	min	max	ave
+1	72	75	72.425
+2	72	73	72.075
+3	72	73	72.01
+4	72	72	72
+opt count : 0
+opt average : 72
+convergence generation : 4

@@ -1,0 +1,22 @@
+Instance : rat99.tsp
+opt distance : 6773
+trial : 1
+generation : 100
+population : 200
+children : 100
+trial...1
+gene	min	max	ave
+1	1216	1334	1283.21
+2	1212	1292	1251.88
+3	1211	1263	1229.44
+4	1211	1252	1218.38
+5	1211	1227	1213.2
+6	1211	1217	1212
+7	1211	1213	1211.65
+8	1211	1212	1211.42
+9	1211	1212	1211.16
+10	1211	1212	1211.03
+11	1211	1211	1211
+opt count : 0
+opt average : 1211
+convergence generation : 11
