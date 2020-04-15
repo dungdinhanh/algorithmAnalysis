@@ -1,4 +1,4 @@
-﻿#ifndef tour_hpp
+#ifndef tour_hpp
 #define tour_hpp
 
 #include <iostream>
@@ -6,6 +6,9 @@
 #include <list>
 #include <fstream>
 #include <string>
+#include <bits/stdc++.h> 
+#include <sstream>
+#include <string.h>
 
 #include "parameter.hpp"
 #include "node.hpp"
@@ -31,6 +34,7 @@ public:
         return !equal(tour.begin(), tour.end(), t.tour.begin());
     }
 
+
 private:
 bool is_number(std::string str)
 	{
@@ -44,10 +48,21 @@ bool is_number(std::string str)
         }
 	}
 
-public:
-    void input_file(const std::string& filename){
+private:
+bool is_number_str(char *token)
+{
+    int len = strlen(token);
+    int i = 0;
+    for(int i = 0; i < len; i++)
+    {
+        if(!isdigit(token[i]))return false;
+    }
+    return true;
+}
 
-        std::ifstream inputfile(filename);
+public:
+    bool input_file(const std::string& filename){
+       std::ifstream inputfile(filename);
 
         if(inputfile.fail()){
             std::cerr << "inputfile can not open." << std::endl;
@@ -76,20 +91,31 @@ public:
         tour.resize(size);
 
         int i = 0;
-        int pass = 1;
-        int checked = 0;
+        int check = 0;
         while(1){
             std::getline(inputfile, str);
-            std::string data_str = str;
-            std::string token = str.substr(0, str.find(" "));
-            int j;
-            if (!is_number(token))continue;
+            if(str.empty())break;
+            char *data_str = (char *)malloc(sizeof(char) * (str.size() + 1));
+            strcpy(data_str, str.c_str());
+            char *token = strtok(data_str, " ");
+            std::cout<<token<<std::endl;
+            if(!is_number_str(token))continue;
+            int count = 0;
+            while(token != NULL){
+                count += 1;
+                token = strtok(NULL, " \n");
+            }
+            if(count != 3)continue;
+            
+            check = 1;
 
-            sscanf(data_str.data(), "%d %lf %lf", &tour[i].id,  &tour[i].x, &tour[i].y);
+            sscanf(str.data(), "%d %lf %lf", &tour[i].id,  &tour[i].x, &tour[i].y);
+            std::cout<<i<<" , "<<tour[i].id << ", " << tour[i].x << " , "<<tour[i].y << std::endl;
             i++;
             if(i == size)break;
         }
         inputfile.close();
+        return check;      
     }
 
     int euc_2d(const Node& n1, const Node& n2){

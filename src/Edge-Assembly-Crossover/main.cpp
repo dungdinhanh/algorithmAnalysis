@@ -29,10 +29,16 @@ int main(int argc, char* argv[]){
         std::string filename(entry->d_name);
         filename = "./TSPLIB/" + filename;
         std::string data_name(entry->d_name);
+        std::cout<<filename<<std::endl;
         // データの読み込み
         Tour data;
 
-        data.input_file(filename);
+        int check =  data.input_file(filename);
+        if(!check)
+        {
+            std::cout<<"This file is not true format"<<std::endl;
+            continue;
+        }
         // 近傍リストの作成・コスト表の作成
         std::vector<std::vector<int> > cost(data.size + 1, std::vector<int>(data.size + 1, 0));
         std::vector<std::list<std::pair<int, int> > > NNlist(data.size + 1);

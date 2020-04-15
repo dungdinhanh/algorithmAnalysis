@@ -1,0 +1,19 @@
+Instance : kroC100.tsp
+opt distance : 6773
+trial : 1
+generation : 100
+population : 200
+children : 100
+trial...1
+gene	min	max	ave
+1	20805	23076	21745.4
+2	20749	22027	21234.2
+3	20749	21555	20976
+4	20749	21164	20837.2
+5	20749	20899	20768.1
+6	20749	20856	20752.5
+7	20749	20769	20749.1
+8	20749	20749	20749
+opt count : 0
+opt average : 20749
+convergence generation : 8

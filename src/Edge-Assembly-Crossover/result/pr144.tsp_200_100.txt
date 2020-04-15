@@ -1,0 +1,20 @@
+Instance : pr144.tsp
+opt distance : 6773
+trial : 1
+generation : 100
+population : 200
+children : 100
+trial...1
+gene	min	max	ave
+1	58590	66131	60262.4
+2	58554	62440	59097.7
+3	58537	59979	58686.8
+4	58537	58973	58594.4
+5	58537	58607	58567.3
+6	58537	58590	58553.7
+7	58537	58590	58541.2
+8	58537	58590	58537.3
+9	58537	58537	58537
+opt count : 0
+opt average : 58537
+convergence generation : 9
