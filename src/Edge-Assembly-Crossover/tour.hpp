@@ -117,7 +117,7 @@ public:
             
 
             sscanf(str.data(), "%d %lf %lf", &tour[i].id,  &tour[i].x, &tour[i].y);
-            std::cout<<i<<" , "<<tour[i].id << ", " << tour[i].x << " , "<<tour[i].y << std::endl;
+            // std::cout<<i<<" , "<<tour[i].id << ", " << tour[i].x << " , "<<tour[i].y << std::endl;
             i++;
             if(i == size)break;
         }

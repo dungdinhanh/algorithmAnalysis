@@ -1,15 +1,114 @@
 Instance : ulysses22.tsp
 opt distance : 6773
-trial : 1
+trial : 20
 generation : 100
 population : 200
 children : 100
 trial...1
 gene	min	max	ave
-1	72	75	72.425
-2	72	73	72.075
+1	72	74	72.305
+2	72	73	72.05
+3	72	72	72
+trial...2
+gene	min	max	ave
+1	72	75	72.315
+2	72	73	72.085
 3	72	73	72.01
 4	72	72	72
+trial...3
+gene	min	max	ave
+1	72	74	72.285
+2	72	74	72.06
+3	72	73	72.01
+4	72	72	72
+trial...4
+gene	min	max	ave
+1	72	75	72.23
+2	72	73	72.025
+3	72	72	72
+trial...5
+gene	min	max	ave
+1	72	75	72.335
+2	72	73	72.04
+3	72	72	72
+trial...6
+gene	min	max	ave
+1	72	75	72.345
+2	72	73	72.04
+3	72	72	72
+trial...7
+gene	min	max	ave
+1	72	75	72.34
+2	72	73	72.035
+3	72	72	72
+trial...8
+gene	min	max	ave
+1	72	75	72.31
+2	72	73	72.035
+3	72	72	72
+trial...9
+gene	min	max	ave
+1	72	74	72.275
+2	72	73	72.02
+3	72	72	72
+trial...10
+gene	min	max	ave
+1	72	74	72.3
+2	72	73	72.045
+3	72	72	72
+trial...11
+gene	min	max	ave
+1	72	74	72.245
+2	72	73	72.045
+3	72	72	72
+trial...12
+gene	min	max	ave
+1	72	74	72.355
+2	72	73	72.08
+3	72	72	72
+trial...13
+gene	min	max	ave
+1	72	74	72.31
+2	72	73	72.045
+3	72	73	72.005
+4	72	72	72
+trial...14
+gene	min	max	ave
+1	72	74	72.35
+2	72	73	72.055
+3	72	72	72
+trial...15
+gene	min	max	ave
+1	72	75	72.325
+2	72	73	72.06
+3	72	72	72
+trial...16
+gene	min	max	ave
+1	72	74	72.325
+2	72	73	72.055
+3	72	73	72.005
+4	72	72	72
+trial...17
+gene	min	max	ave
+1	72	75	72.325
+2	72	73	72.035
+3	72	72	72
+trial...18
+gene	min	max	ave
+1	72	75	72.395
+2	72	73	72.045
+3	72	73	72.005
+4	72	72	72
+trial...19
+gene	min	max	ave
+1	72	75	72.365
+2	72	73	72.07
+3	72	72	72
+trial...20
+gene	min	max	ave
+1	72	74	72.24
+2	72	73	72.03
+3	72	72	72
 opt count : 0
 opt average : 72
-convergence generation : 4
+convergence generation : 3.25

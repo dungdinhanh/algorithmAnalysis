@@ -4,7 +4,7 @@
 #include <string>
 #include <random>
 
-static const int TRIAL = 1;
+static const int TRIAL = 20;
 static const int GENERATION = 100;
 static const int POPULATION = 200;
 static const int CHILDREN = 100;
