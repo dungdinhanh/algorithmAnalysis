@@ -1,7 +1,0 @@
-Instance : ulysses22.tsp
-opt distance : 6773
-trial : 1
-generation : 100
-population : 200
-children : 100
-trial...1
